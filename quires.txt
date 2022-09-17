@@ -1,0 +1,5 @@
+1.b --- mongoimport -d ccfc_in_mpg -c mpgtable –type csv –file mpg.csv --headerline
+2.a --- db.mpgtable.find({cylinders:{$gte:5}})
+2.b --- db.mpgtable.find({$and :[{mpg : {$eq :18}},{weight:{$gte:3500}}]})
+2.c --- db.mpgtable.updateMany({weight :{$gte : 3500 }}, {$set:{ acceleration:8}})
+2.d --- db.mpgtable.find({cylinders:{$gte:4}},{horsepower:1,displacement:1,_id:0})
